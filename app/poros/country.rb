@@ -6,6 +6,6 @@ class Country
   def initialize(attributes)
     @common_name = attributes[:name][:common]
     @official_name = attributes[:name][:official]
-    @capital = attributes[:capital].first
+    @capital = attributes[:capital].first if attributes[:capital] 
   end
 end

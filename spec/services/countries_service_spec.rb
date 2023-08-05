@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Countries Service' do
   describe 'class methods', :vcr do 
-    it '#all_countries' do 
-      response = CountriesService.all_countries
+    it '#endpoint' do 
+      response = CountriesService.endpoint("all")
 
       expect(response).to be_a Array
       

@@ -14,8 +14,5 @@ RSpec.describe 'Countries Service' do
         expect(r[:name][:common]).to be_a String
       end
     end
-
-    it '' do 
-    end
   end
 end

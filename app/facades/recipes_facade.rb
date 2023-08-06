@@ -4,8 +4,7 @@ class RecipesFacade
     create_recipes(response[:hits], country)
   end
 
-  private
-
+private
   def create_recipes(recipes_info, search)
     recipes_info.map do |recipe_info|
       Recipe.new(recipe_info, search)

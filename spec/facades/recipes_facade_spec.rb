@@ -16,7 +16,6 @@ RSpec.describe RecipesFacade, :vcr do
       recipes = @rp.recipes_search('sudan')
 
       expect(recipes).to be_an Array
-      
       recipes.each do |recipe|
         expect(recipe).to be_a Recipe
         expect(recipe.country).to eq('Sudan')

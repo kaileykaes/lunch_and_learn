@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Countries Service' do
+RSpec.describe CountriesService do
   describe 'class methods', :vcr do 
     it '#endpoint' do 
       response = CountriesService.endpoint("all")
@@ -13,9 +13,6 @@ RSpec.describe 'Countries Service' do
         expect(r[:name]).to have_key(:common)
         expect(r[:name][:common]).to be_a String
       end
-    end
-
-    it '' do 
     end
   end
 end

@@ -2,9 +2,9 @@ class RecipesService
   class << self 
     def endpoint(path, query)
       response = conn.get(path) do |request|
-        request.params[:q] = search
-        request.params[:app_id] = ENV['api_id']
-        request.params[:app_key] = ENV['api_key']
+        request.params[:q] = query
+        request.params[:app_id] = ENV['app_id']
+        request.params[:app_key] = ENV['app_key']
       end
       parse_response(response)
     end

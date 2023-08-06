@@ -8,6 +8,6 @@ class Recipe
     @title = attributes[:recipe][:label]
     @url = attributes[:recipe][:url]
     @image = attributes[:recipe][:image]
-    @country = country
+    @country = country.capitalize
   end
 end

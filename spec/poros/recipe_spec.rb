@@ -4,7 +4,7 @@ RSpec.describe Recipe do
   before(:each) do
     recipe_info = File.read("spec/fixtures/recipes/one_recipe.json")
     params = JSON.parse(recipe_info, symbolize_names: true)
-    @recipe = Recipe.new(params, 'Lithuania')
+    @recipe = Recipe.new(params, 'lithuania')
   end
 
   describe 'initialize' do 

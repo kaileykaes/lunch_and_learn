@@ -78,3 +78,8 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.allow_http_connections_when_no_cassette = true
 end
+
+def check_hash_structure(object, key, data_type)
+  expect(object).to have_key(key)
+  expect(object[key]).to be_a(data_type)
+end

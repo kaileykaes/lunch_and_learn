@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Countries Service' do
+RSpec.describe CountriesService do
   describe 'class methods', :vcr do 
     it '#endpoint' do 
       response = CountriesService.endpoint("all")

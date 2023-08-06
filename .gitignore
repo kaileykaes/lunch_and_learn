@@ -32,3 +32,5 @@
 #Ignore simplecov coverage reports
 /coverage
 
+#Ignore api key and api id
+/config/application.yml

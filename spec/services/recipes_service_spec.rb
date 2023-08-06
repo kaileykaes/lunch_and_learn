@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'Countries Service' do
+RSpec.describe RecipesService do
   describe 'class methods', :vcr do 
     it '#endpoint' do 
-      response = RecipesService.endpoint("q=lithuania")
+      response = RecipesService.endpoint("recipes/v2?type=public", 'lithuania')
 
       expect(response).to be_a Array
       

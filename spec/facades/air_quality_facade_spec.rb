@@ -16,10 +16,10 @@ RSpec.describe AirQualityFacade do
       response = @aqf.air_quality_by_country('France')
 
       expect(response).to be_a AirQuality
-      expect(response.aqi).to eq(102)
+      expect(response.aqi).to eq(84)
       expect(response.city).to eq('Paris')
-      expect(response.co_concentration).to eq(216.96)
-      expect(response.pm25_concentration).to eq(2.95)
+      expect(response.co_concentration).to eq(220.3)
+      expect(response.pm25_concentration).to eq(2.74)
       expect(response.id).to eq('null')
     end
   end

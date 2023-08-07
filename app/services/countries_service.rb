@@ -1,7 +1,7 @@
 class CountriesService
   class << self 
-    def endpoint(path, params={})
-      parse_response(conn.get("all"))
+    def endpoint(path)
+      parse_response(conn.get(path))
     end
     
     private 

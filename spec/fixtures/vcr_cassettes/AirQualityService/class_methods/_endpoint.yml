@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.api-ninjas.com/v1/airquality?city=prague
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      X-Api-Key:
+      - ESrwNAWE3+pwt3/YKw86OQ==zRF1bwPj7QIs4Eh6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '276'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 06 Aug 2023 23:47:06 GMT
+      X-Amzn-Requestid:
+      - 1071f647-e5e4-4a39-9074-c939fdecff82
+      Access-Control-Allow-Origin:
+      - "*"
+      Allow:
+      - GET, OPTIONS, POST
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Amz-Apigw-Id:
+      - JQyXAFBQPHcFyMA=
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS, POST
+      X-Amzn-Trace-Id:
+      - Root=1-64d030f9-1a4cae54634500a36510fe54;Sampled=0;lineage=d5ca6d75:0
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 8139bc666c011a53bdc5037ba6d5931e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW57-P1
+      X-Amz-Cf-Id:
+      - wqVVLlvLy_FpsIGl4qSWqVE0YGcgE44H9AmWr1QGU0Z_C4kysZm5Wg==
+    body:
+      encoding: UTF-8
+      string: '{"CO": {"concentration": 203.61, "aqi": 2}, "NO2": {"concentration":
+        4.46, "aqi": 5}, "O3": {"concentration": 41.13, "aqi": 34}, "SO2": {"concentration":
+        1.67, "aqi": 2}, "PM2.5": {"concentration": 1.07, "aqi": 3}, "PM10": {"concentration":
+        1.42, "aqi": 1}, "overall_aqi": 34}'
+  recorded_at: Sun, 06 Aug 2023 23:47:06 GMT
+recorded_with: VCR 6.2.0

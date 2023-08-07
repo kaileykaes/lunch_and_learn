@@ -2,18 +2,18 @@ require 'rails_helper'
 
 RSpec.describe RecipesFacade, :vcr do
   before(:each) do
-    @rp = RecipesFacade.new
+    @rf = RecipesFacade.new
   end
 
   describe 'initialize' do
     it 'exists' do 
-      expect(@rp).to be_a RecipesFacade
+      expect(@rf).to be_a RecipesFacade
     end
   end
 
   describe 'methods' do 
     it 'recipes_search' do
-      recipes = @rp.recipes_search('sudan')
+      recipes = @rf.recipes_search('sudan')
 
       expect(recipes).to be_an Array
       recipes.each do |recipe|

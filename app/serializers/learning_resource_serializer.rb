@@ -7,10 +7,7 @@ class LearningResourceSerializer
           type: 'learning_resource', 
           attributes: {
             country: country, 
-            video: {
-              title: video.title, 
-              youtube_video_id: video.youtube_video_id
-            }, 
+            video: video_serialization(video), 
             images: images_format(images)
           }
         }
@@ -23,6 +20,17 @@ class LearningResourceSerializer
         {
           alt_tag: image.alt_tag, 
           url: image.url
+        }
+      end
+    end
+
+    def video_serialization(video)
+      if video == nil
+        {}
+      else
+        {
+          title: video.title, 
+          youtube_video_id: video.youtube_video_id
         }
       end
     end

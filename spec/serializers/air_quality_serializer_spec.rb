@@ -14,6 +14,7 @@ RSpec.describe 'Air Quality Serializer' do
       check_hash_structure(parsed_air_quality, :data, Hash)
       expect(parsed_air_quality[:data][:id]).to eq(nil.to_json)
       check_hash_structure(parsed_air_quality[:data], :type, String)
+      check_hash_structure(parsed_air_quality[:data], :city, String)
       check_hash_structure(parsed_air_quality[:data], :attributes, Hash)
 
       attributes = parsed_air_quality[:data][:attributes]
@@ -21,7 +22,6 @@ RSpec.describe 'Air Quality Serializer' do
       check_hash_structure(attributes, :aqi, Integer)
       check_hash_structure(attributes, :pm25_concentration, Float)
       check_hash_structure(attributes, :co_concentration, Float)
-      check_hash_structure(attributes, :city, String)
     end
   end
 end

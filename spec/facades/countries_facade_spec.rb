@@ -38,7 +38,7 @@ RSpec.describe CountriesFacade do
     end
 
     it 'one_country' do 
-      country = @cf.one_country('Uruguay')
+      country = @cf.one_country('uruguay')
       expect(country.common_name).to eq('Uruguay')
       expect(country.official_name).to eq('Oriental Republic of Uruguay')
       expect(country.capital).to eq('Montevideo')

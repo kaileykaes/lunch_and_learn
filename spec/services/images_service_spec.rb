@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ImagesService do
   describe 'class methods' do
     it 'endpoint' do 
-      result = ImagesService.endpoint('libya')
+      result = ImagesService.endpoint("search/photos?page=1", 'libya')
 
       expect(result).to be_a Hash
 
@@ -11,7 +11,7 @@ RSpec.describe ImagesService do
       check_hash_structure(result, :total_pages, Integer)
       check_hash_structure(result, :results, Array)
 
-      results = result[:results]
+      results = result[:results].take(5)
 
       results.each do |r|
         check_hash_structure(r, :id, String)

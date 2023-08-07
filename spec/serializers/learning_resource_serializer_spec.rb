@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Learning Resource Serializer' do
-  before(:each), :vcr do
-    @video = VideosFacade.new.video_search('peru').sample
+RSpec.describe 'Learning Resource Serializer', :vcr do
+  before(:each) do
+    @video = VideosFacade.new.videos_search('peru').sample
     @images = ImagesFacade.new.images_search('peru')
   end
 
@@ -11,14 +11,13 @@ RSpec.describe 'Learning Resource Serializer' do
       serialized_resource = LearningResourceSerializer.format_resources(@video, @images, 'peru')
 
       resource = JSON.parse(serialized_resource, symbolize_names: true)
-
       check_hash_structure(resource, :data, Hash)
 
       resource_data = resource[:data]
-      
+
       expect(resource_data).to be_a Hash
-      check_hash_structure(resource_data, :id, String)
-      expect(resource_data[:id]).to eq(nil.to_json)
+      expect(resource_data).to have_key(:id)
+      expect(resource_data[:id]).to eq(nil)
       check_hash_structure(resource_data, :type, String)
       expect(resource_data[:type]).to eq('learning_resource')
       check_hash_structure(resource_data, :attributes, Hash)\

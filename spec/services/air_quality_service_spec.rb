@@ -6,7 +6,6 @@ RSpec.describe AirQualityService do
       response = AirQualityService.endpoint("prague")
 
       expect(response).to be_a Hash
-      
     
       check_hash_structure(response, :overall_aqi, Integer)
       check_hash_structure(response, :CO, Hash)

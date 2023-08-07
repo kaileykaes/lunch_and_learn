@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Learning Resources Requests' do
+RSpec.describe 'Learning Resources Requests', :vcr do
   describe 'endpoint' do
     it 'hits the endpoint' do 
       get "/api/v1/learning_resources?country=india"

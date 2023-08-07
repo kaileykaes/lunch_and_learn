@@ -36,5 +36,17 @@ RSpec.describe CountriesFacade do
 
       expect(country_names).to include(country_name)
     end
+
+    it 'one_country' do 
+      country = @cf.one_country('Uruguay')
+      expect(country.common_name).to eq('Uruguay')
+      expect(country.official_name).to eq('Oriental Republic of Uruguay')
+      expect(country.capital).to eq('Montevideo')
+    end
+
+    it 'capital city by country' do 
+      capital_city = @cf.capital_by_country('uruguay')
+      expect(capital_city).to eq('Montevideo')
+    end
   end
 end

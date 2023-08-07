@@ -1,10 +1,18 @@
 class CountriesFacade
   def all_countries
-    (CountriesService.endpoint("all"))
+    CountriesService.endpoint("all")
+  end
+
+  def one_country(country_name)
+    create_countries(CountriesService.endpoint("name/#{country_name}")).first
   end
 
   def random_country_name
     country_names.sample
+  end
+
+  def capital_by_country(country)
+    one_country(country).capital
   end
 
   private

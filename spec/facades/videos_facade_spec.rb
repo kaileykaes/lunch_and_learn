@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe VideosFacade do
+RSpec.describe VideosFacade, :vcr do
   before(:each) do
     @vf = VideosFacade.new
   end

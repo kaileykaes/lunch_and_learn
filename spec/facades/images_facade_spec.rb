@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ImagesFacade do
+RSpec.describe ImagesFacade, :vcr do
   before(:each) do
     @if = ImagesFacade.new
   end

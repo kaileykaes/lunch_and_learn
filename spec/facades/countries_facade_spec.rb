@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CountriesFacade do
+RSpec.describe CountriesFacade, :vcr do
   before(:each) do 
     @cf = CountriesFacade.new
   end

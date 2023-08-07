@@ -1,10 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Recipes Requests' do
+RSpec.describe 'Recipes Requests', :vcr do
   describe 'endpoint' do
-    # before(:each) do
-    # end
-    
     it 'hits the endpoint' do 
       get "/api/v1/recipes?country=laos" 
       expect(response).to be_successful

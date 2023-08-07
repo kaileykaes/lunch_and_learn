@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ImagesService do
+RSpec.describe ImagesService, :vcr do
   describe 'class methods' do
     it 'endpoint' do 
       result = ImagesService.endpoint("search/photos?page=1", 'libya')

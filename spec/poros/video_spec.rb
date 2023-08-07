@@ -14,7 +14,7 @@ RSpec.describe Video do
 
     it 'has attributes' do 
       expect(@video.title).to eq("A Super Quick History of Croatia")
-      expect(@video.id).to eq("GXww65SCZ1s")
+      expect(@video.youtube_video_id).to eq("GXww65SCZ1s")
     end
   end
 end

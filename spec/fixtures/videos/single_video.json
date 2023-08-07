@@ -1,45 +1,34 @@
 {
-  "kind": "youtube#searchListResponse",
-  "etag": "gCutaF3XtLJNcWVufBAeNMNQJ9Y",
-  "nextPageToken": "CAUQAA",
-  "regionCode": "US",
-  "pageInfo": {
-      "totalResults": 23,
-      "resultsPerPage": 5
-  },
-  "items": [
-      {
-          "kind": "youtube#searchResult",
-          "etag": "pTAuUtLI_7cX5RSsFG0MLRZ1QfU",
-          "id": {
-              "kind": "youtube#video",
-              "videoId": "GXww65SCZ1s"
-          },
-          "snippet": {
-              "publishedAt": "2020-01-05T21:10:15Z",
-              "channelId": "UCluQ5yInbeAkkeCndNnUhpw",
-              "title": "A Super Quick History of Croatia",
-              "description": "Pictures Requiring Attribution: Electrideodes: https://commons.wikimedia.org/wiki/File:Monkodonja4.JPG MaryroseB54: ...",
-              "thumbnails": {
-                  "default": {
-                      "url": "https://i.ytimg.com/vi/GXww65SCZ1s/default.jpg",
-                      "width": 120,
-                      "height": 90
-                  },
-                  "medium": {
-                      "url": "https://i.ytimg.com/vi/GXww65SCZ1s/mqdefault.jpg",
-                      "width": 320,
-                      "height": 180
-                  },
-                  "high": {
-                      "url": "https://i.ytimg.com/vi/GXww65SCZ1s/hqdefault.jpg",
-                      "width": 480,
-                      "height": 360
-                  }
-              },
-              "channelTitle": "Mr History",
-              "liveBroadcastContent": "none",
-              "publishTime": "2020-01-05T21:10:15Z"
-          }
-      }
+    "kind": "youtube#searchResult",
+    "etag": "pTAuUtLI_7cX5RSsFG0MLRZ1QfU",
+    "id": {
+        "kind": "youtube#video",
+        "videoId": "GXww65SCZ1s"
+    },
+    "snippet": {
+        "publishedAt": "2020-01-05T21:10:15Z",
+        "channelId": "UCluQ5yInbeAkkeCndNnUhpw",
+        "title": "A Super Quick History of Croatia",
+        "description": "Pictures Requiring Attribution: Electrideodes: https://commons.wikimedia.org/wiki/File:Monkodonja4.JPG MaryroseB54: ...",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/GXww65SCZ1s/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/GXww65SCZ1s/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/GXww65SCZ1s/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            }
+        },
+        "channelTitle": "Mr History",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-01-05T21:10:15Z"
     }
+}

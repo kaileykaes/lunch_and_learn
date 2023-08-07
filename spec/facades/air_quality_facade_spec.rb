@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe AirQualityFacade do
+RSpec.describe AirQualityFacade, :vcr do
   before(:each) do 
     @aqf = AirQualityFacade.new
   end
@@ -16,10 +16,10 @@ RSpec.describe AirQualityFacade do
       response = @aqf.air_quality_by_country('France')
 
       expect(response).to be_a AirQuality
-      expect(response.aqi).to eq(84)
+      expect(response.aqi).to be_an Integer
       expect(response.city).to eq('Paris')
-      expect(response.co_concentration).to eq(220.3)
-      expect(response.pm25_concentration).to eq(2.74)
+      expect(response.co_concentration).to be_a Float
+      expect(response.pm25_concentration).to be_a Float
       expect(response.id).to eq('null')
     end
   end

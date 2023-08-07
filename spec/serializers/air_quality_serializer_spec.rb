@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Air Quality Serializer' do
+RSpec.describe 'Air Quality Serializer', :vcr do
   describe 'serialization' do
     it 'serializes a single air quality object' do 
       air_quality = AirQualityFacade.new.air_quality_by_country('Nigeria')

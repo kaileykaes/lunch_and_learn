@@ -8,7 +8,7 @@ class CountriesFacade
   end
 
   def random_country_name
-    country_names.sample.delete(' ')
+    country_names.sample 
   end
 
   def capital_by_country(country)

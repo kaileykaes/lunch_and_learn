@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://restcountries.com/v3.1/name/Nigeria
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 07 Aug 2023 16:55:26 GMT
+      Server:
+      - Apache/2.4.38 (Debian)
+      Cache-Control:
+      - public, immutable, max-age=31556926
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3381'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sibmFtZSI6eyJjb21tb24iOiJOaWdlcmlhIiwib2ZmaWNpYWwiOiJGZWRlcmFsIFJlcHVibGljIG9mIE5pZ2VyaWEiLCJuYXRpdmVOYW1lIjp7ImVuZyI6eyJvZmZpY2lhbCI6IkZlZGVyYWwgUmVwdWJsaWMgb2YgTmlnZXJpYSIsImNvbW1vbiI6Ik5pZ2VyaWEifX19LCJ0bGQiOlsiLm5nIl0sImNjYTIiOiJORyIsImNjbjMiOiI1NjYiLCJjY2EzIjoiTkdBIiwiY2lvYyI6Ik5HUiIsImluZGVwZW5kZW50Ijp0cnVlLCJzdGF0dXMiOiJvZmZpY2lhbGx5LWFzc2lnbmVkIiwidW5NZW1iZXIiOnRydWUsImN1cnJlbmNpZXMiOnsiTkdOIjp7Im5hbWUiOiJOaWdlcmlhbiBuYWlyYSIsInN5bWJvbCI6IuKCpiJ9fSwiaWRkIjp7InJvb3QiOiIrMiIsInN1ZmZpeGVzIjpbIjM0Il19LCJjYXBpdGFsIjpbIkFidWphIl0sImFsdFNwZWxsaW5ncyI6WyJORyIsIk5pamVyaXlhIiwiTmHDrWrDrXLDrcOgIiwiRmVkZXJhbCBSZXB1YmxpYyBvZiBOaWdlcmlhIl0sInJlZ2lvbiI6IkFmcmljYSIsInN1YnJlZ2lvbiI6Ildlc3Rlcm4gQWZyaWNhIiwibGFuZ3VhZ2VzIjp7ImVuZyI6IkVuZ2xpc2gifSwidHJhbnNsYXRpb25zIjp7ImFyYSI6eyJvZmZpY2lhbCI6Itis2YXZh9mI2LHZitipINmG2YrYrNmK2LHZitinINin2YTYp9iq2K3Yp9iv2YrYqSIsImNvbW1vbiI6ItmG2YrYrNmK2LHZitinIn0sImJyZSI6eyJvZmZpY2lhbCI6IlJlcHVibGlrIEtldnJlYWRlbCBOaWdlcmlhIiwiY29tbW9uIjoiTmlnZXJpYSJ9LCJjZXMiOnsib2ZmaWNpYWwiOiJOaWdlcmlqc2vDoSBmZWRlcmF0aXZuw60gcmVwdWJsaWthIiwiY29tbW9uIjoiTmlnw6lyaWUifSwiY3ltIjp7Im9mZmljaWFsIjoiRmVkZXJhbCBSZXB1YmxpYyBvZiBOaWdlcmlhIiwiY29tbW9uIjoiTmlnZXJpYSJ9LCJkZXUiOnsib2ZmaWNpYWwiOiJCdW5kZXNyZXB1YmxpayBOaWdlcmlhIiwiY29tbW9uIjoiTmlnZXJpYSJ9LCJlc3QiOnsib2ZmaWNpYWwiOiJOaWdlZXJpYSBMaWl0dmFiYXJpaWsiLCJjb21tb24iOiJOaWdlZXJpYSJ9LCJmaW4iOnsib2ZmaWNpYWwiOiJOaWdlcmlhbiBsaWl0dG90YXNhdmFsdGEiLCJjb21tb24iOiJOaWdlcmlhIn0sImZyYSI6eyJvZmZpY2lhbCI6IlLDqXB1YmxpcXVlIGbDqWTDqXJhbGUgZHUgTmlnZXJpYSIsImNvbW1vbiI6Ik5pZ8OpcmlhIn0sImhydiI6eyJvZmZpY2lhbCI6IlNhdmV6bmEgUmVwdWJsaWthIE5pZ2VyaWphIiwiY29tbW9uIjoiTmlnZXJpamEifSwiaHVuIjp7Im9mZmljaWFsIjoiTmlnw6lyaWEiLCJjb21tb24iOiJOaWfDqXJpYSJ9LCJpdGEiOnsib2ZmaWNpYWwiOiJSZXB1YmJsaWNhIGZlZGVyYWxlIGRpIE5pZ2VyaWEiLCJjb21tb24iOiJOaWdlcmlhIn0sImpwbiI6eyJvZmZpY2lhbCI6IuODiuOCpOOCuOOCp+ODquOCoumAo+mCpuWFseWSjOWbvSIsImNvbW1vbiI6IuODiuOCpOOCuOOCp+ODquOCoiJ9LCJrb3IiOnsib2ZmaWNpYWwiOiLrgpjsnbTsp4DrpqzslYQg7Jew67CpIOqzte2ZlOq1rSIsImNvbW1vbiI6IuuCmOydtOyngOumrOyVhCJ9LCJubGQiOnsib2ZmaWNpYWwiOiJGZWRlcmFsZSBSZXB1YmxpZWsgTmlnZXJpYSIsImNvbW1vbiI6Ik5pZ2VyaWEifSwicGVyIjp7Im9mZmljaWFsIjoi2KzZhdmH2YjYsduMINmB2K/Ysdin2YQg2YbbjNis2LHbjNmHIiwiY29tbW9uIjoi2YbbjNis2LHbjNmHIn0sInBvbCI6eyJvZmZpY2lhbCI6IkZlZGVyYWxuYSBSZXB1Ymxpa2EgTmlnZXJpaSIsImNvbW1vbiI6Ik5pZ2VyaWEifSwicG9yIjp7Im9mZmljaWFsIjoiUmVww7pibGljYSBGZWRlcmFsIGRhIE5pZ8OpcmlhIiwiY29tbW9uIjoiTmlnw6lyaWEifSwicnVzIjp7Im9mZmljaWFsIjoi0KTQtdC00LXRgNCw0YLQuNCy0L3QsNGPINCg0LXRgdC/0YPQsdC70LjQutCwINCd0LjQs9C10YDQuNGPIiwiY29tbW9uIjoi0J3QuNCz0LXRgNC40Y8ifSwic2xrIjp7Im9mZmljaWFsIjoiTmlnw6lyaWpza8OhIGZlZGVyYXTDrXZuYSByZXB1Ymxpa2EiLCJjb21tb24iOiJOaWfDqXJpYSJ9LCJzcGEiOnsib2ZmaWNpYWwiOiJSZXDDumJsaWNhIEZlZGVyYWwgZGUgTmlnZXJpYSIsImNvbW1vbiI6Ik5pZ2VyaWEifSwic3JwIjp7Im9mZmljaWFsIjoi0KHQsNCy0LXQt9C90LAg0KDQtdC/0YPQsdC70LjQutCwINCd0LjQs9C10YDQuNGY0LAiLCJjb21tb24iOiLQndC40LPQtdGA0LjRmNCwICJ9LCJzd2UiOnsib2ZmaWNpYWwiOiJGw7ZyYnVuZHNyZXB1Ymxpa2VuIE5pZ2VyaWEiLCJjb21tb24iOiJOaWdlcmlhIn0sInR1ciI6eyJvZmZpY2lhbCI6Ik5pamVyeWEgRmVkZXJhbCBDdW1odXJpeWV0aSIsImNvbW1vbiI6Ik5pamVyeWEifSwidXJkIjp7Im9mZmljaWFsIjoi2YjZgdin2YLbjCDYrNmF24HZiNix24zbgSDZhtin2KbYrNuM2LHbjNinIiwiY29tbW9uIjoi2YbYp9im2KzbjNix24zYpyJ9LCJ6aG8iOnsib2ZmaWNpYWwiOiLlsLzml6XliKnkuprogZTpgqblhbHlkozlm70iLCJjb21tb24iOiLlsLzml6XliKnkupoifX0sImxhdGxuZyI6WzEwLjAsOC4wXSwibGFuZGxvY2tlZCI6ZmFsc2UsImJvcmRlcnMiOlsiQkVOIiwiQ01SIiwiVENEIiwiTkVSIl0sImFyZWEiOjkyMzc2OC4wLCJkZW1vbnltcyI6eyJlbmciOnsiZiI6Ik5pZ2VyaWFuIiwibSI6Ik5pZ2VyaWFuIn0sImZyYSI6eyJmIjoiTmlnw6lyaWFuZSIsIm0iOiJOaWfDqXJpYW4ifX0sImZsYWciOiJcdUQ4M0NcdURERjNcdUQ4M0NcdURERUMiLCJtYXBzIjp7Imdvb2dsZU1hcHMiOiJodHRwczovL2dvby5nbC9tYXBzL0xUbjQxN3FXd0JQRnN6dVY5Iiwib3BlblN0cmVldE1hcHMiOiJodHRwczovL3d3dy5vcGVuc3RyZWV0bWFwLm9yZy9yZWxhdGlvbi8xOTI3ODcifSwicG9wdWxhdGlvbiI6MjA2MTM5NTg3LCJnaW5pIjp7IjIwMTgiOjM1LjF9LCJmaWZhIjoiTkdBIiwiY2FyIjp7InNpZ25zIjpbIldBTiJdLCJzaWRlIjoicmlnaHQifSwidGltZXpvbmVzIjpbIlVUQyswMTowMCJdLCJjb250aW5lbnRzIjpbIkFmcmljYSJdLCJmbGFncyI6eyJwbmciOiJodHRwczovL2ZsYWdjZG4uY29tL3czMjAvbmcucG5nIiwic3ZnIjoiaHR0cHM6Ly9mbGFnY2RuLmNvbS9uZy5zdmciLCJhbHQiOiJUaGUgZmxhZyBvZiBOaWdlcmlhIGlzIGNvbXBvc2VkIG9mIHRocmVlIGVxdWFsIHZlcnRpY2FsIGJhbmRzIG9mIGdyZWVuLCB3aGl0ZSBhbmQgZ3JlZW4uIn0sImNvYXRPZkFybXMiOnsicG5nIjoiaHR0cHM6Ly9tYWluZmFjdHMuY29tL21lZGlhL2ltYWdlcy9jb2F0c19vZl9hcm1zL25nLnBuZyIsInN2ZyI6Imh0dHBzOi8vbWFpbmZhY3RzLmNvbS9tZWRpYS9pbWFnZXMvY29hdHNfb2ZfYXJtcy9uZy5zdmcifSwic3RhcnRPZldlZWsiOiJtb25kYXkiLCJjYXBpdGFsSW5mbyI6eyJsYXRsbmciOls5LjA4LDcuNTNdfSwicG9zdGFsQ29kZSI6eyJmb3JtYXQiOiIjIyMjIyMiLCJyZWdleCI6Il4oXFxkezZ9KSQifX1d
+  recorded_at: Mon, 07 Aug 2023 16:55:26 GMT
+- request:
+    method: get
+    uri: https://api.api-ninjas.com/v1/airquality?city=Abuja
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      X-Api-Key:
+      - ESrwNAWE3+pwt3/YKw86OQ==zRF1bwPj7QIs4Eh6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '276'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 07 Aug 2023 16:55:27 GMT
+      X-Amzn-Requestid:
+      - 12464851-9345-4112-801b-8fc326fbb522
+      Access-Control-Allow-Origin:
+      - "*"
+      Allow:
+      - GET, OPTIONS, POST
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Amz-Apigw-Id:
+      - JTI_5EtUPHcFVeg=
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS, POST
+      X-Amzn-Trace-Id:
+      - Root=1-64d121ff-7134ea676c1489292eab3f08;Sampled=0;lineage=d5ca6d75:0
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 4bbf91f2f9edc22eb68408b6405ae452.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW57-P1
+      X-Amz-Cf-Id:
+      - m2r-lJpllajoN0vt4seMT8i-UulBzrx0oyo4pu4kqnNKspNhfQh-CQ==
+    body:
+      encoding: UTF-8
+      string: '{"CO": {"concentration": 467.3, "aqi": 5}, "NO2": {"concentration":
+        4.07, "aqi": 5}, "O3": {"concentration": 29.68, "aqi": 25}, "SO2": {"concentration":
+        0.41, "aqi": 0}, "PM2.5": {"concentration": 5.23, "aqi": 16}, "PM10": {"concentration":
+        6.67, "aqi": 6}, "overall_aqi": 25}'
+  recorded_at: Mon, 07 Aug 2023 16:55:28 GMT
+recorded_with: VCR 6.2.0

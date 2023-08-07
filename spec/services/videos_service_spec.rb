@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe VideosService do
   describe 'class methods' do
     it 'endpoint' do 
-      result = VideosService.endpoint("search?part=snippet&channelId=UCluQ5yInbeAkkeCndNnUhpw", 'croatia')
+      result = VideosService.endpoint('croatia')
 
       expect(result).to be_a Hash
       check_hash_structure(result, :kind, String)

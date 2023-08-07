@@ -3,12 +3,14 @@ require 'rails_helper'
 RSpec.describe 'Learning Resources Requests', :vcr do
   describe 'endpoint' do
     it 'hits the endpoint' do 
-      get "/api/v1/learning_resources?country=india"
+      headers = { "CONTENT_TYPE" => "application/json"} 
+      get "/api/v1/learning_resources?country=india", headers: headers
       expect(response).to be_successful
     end
     
     it 'returns serialized json' do 
-      get "/api/v1/learning_resources?country=india"
+      headers = { "CONTENT_TYPE" => "application/json"}
+      get "/api/v1/learning_resources?country=india", headers: headers
       learning_resource = JSON.parse(response.body, symbolize_names: true)
 
       check_hash_structure(learning_resource, :data, Hash)

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Sessions Requests', type: :request do
   before(:each) do
-    @user = create(:user)
+    @user = create(:user, email: 'something@something.com')
     @headers = { 
       "CONTENT_TYPE" => "application/json"
     }

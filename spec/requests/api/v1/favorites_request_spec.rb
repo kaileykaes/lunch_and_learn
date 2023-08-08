@@ -18,6 +18,7 @@ RSpec.describe 'Favorites Requests', type: :request do
       post '/api/v1/favorites', params: favorite_params, headers: @headers, as: :json
 
       expect(response).to be_successful
+      expect(response.status).to eq(201)
       
       success_message = JSON.parse(response.body, symbolize_names: true)
 

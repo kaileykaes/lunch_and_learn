@@ -45,6 +45,16 @@ RSpec.describe 'User Registration', type: :request do
       expect(response).to_not be_successful
       expect(response.status).to eq(403)
       expect(user_count).to eq(user_count)
+
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      check_hash_structure(error, :error, Hash)
+      check_hash_structure(error[:error], :status, Integer)
+      check_hash_structure(error[:error], :message, String)
+
+      error_attributes = error[:error]
+      expect(error_attributes[:status]).to eq(403)
+      expect(error_attributes[:message]).to eq('Validation failed: Email has already been taken')
     end
   end
 end

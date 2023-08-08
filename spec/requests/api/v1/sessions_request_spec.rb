@@ -37,4 +37,46 @@ RSpec.describe 'Sessions Requests', type: :request do
       expect(user_attributes[:api_key]).to eq(@user.api_key)
     end
   end
+
+  describe 'sad paths' do
+    it 'bad email, throws error' do 
+      user_session_info = {
+        email: 'joshuagiraffe@raffi.org', 
+        password: @user.password
+      }
+      post '/api/v1/sessions', params: user_session_info, headers: @headers, as: :json
+      
+      expect(response).to_not be_successful
+      
+      error = JSON.parse(response.body, symbolize_names: true)
+      
+      check_hash_structure(error, :error, Hash)
+      check_hash_structure(error[:error], :status, Integer)
+      check_hash_structure(error[:error], :message, String)
+
+      error_attributes = error[:error]
+      expect(error_attributes[:status]).to eq(401)
+      expect(error_attributes[:message]).to eq("Bad credentials. Try again.")
+    end
+
+    it 'bad password, throws error' do 
+      user_session_info = {
+        email: @user.email, 
+        password: 'shulem'
+      }
+      post '/api/v1/sessions', params: user_session_info, headers: @headers, as: :json
+      
+      expect(response).to_not be_successful
+      
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      check_hash_structure(error, :error, Hash)
+      check_hash_structure(error[:error], :status, Integer)
+      check_hash_structure(error[:error], :message, String)
+
+      error_attributes = error[:error]
+      expect(error_attributes[:status]).to eq(401)
+      expect(error_attributes[:message]).to eq("Bad credentials. Try again.")
+    end
+  end
 end

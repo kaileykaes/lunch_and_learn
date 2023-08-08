@@ -1,6 +1,6 @@
 class Api::V1::LearningResourcesController < ApplicationController
   def index
-    country_params
+    settle_country_params
     render json: LearningResourceSerializer.format_resources(video, images, params[:country])
   end
 

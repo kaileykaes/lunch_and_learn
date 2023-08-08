@@ -11,7 +11,7 @@ class ApplicationController < ActionController::API
     response.status = 403
   end
 
-  def country_params
+  def settle_country_params
     unless params[:country].present? 
       params[:country] = CountriesFacade.new.random_country_name
     end

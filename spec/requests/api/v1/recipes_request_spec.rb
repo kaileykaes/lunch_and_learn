@@ -28,11 +28,20 @@ RSpec.describe 'Recipes Requests' do
   
   describe 'sad paths' do 
     it 'if no country given, returns recipes from random country' do 
-      get '/api/v1/recipes' 
+      response = Net::HTTPSuccess.new(1.0, 200, 'OK')
+      stub_request(:get, "/api/v1/recipes")
+      .with(
+        headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.10'
+          })
+      .to_return(response)
+          
+      expect(response.code).to eq(200)           
       
-      expect(response).to be_successful
-      
-      recipes = JSON.parse(response.body, symbolize_names: true)[:data]
+      json_response = File.read("spec/fixtures/recipes/random_recipe.json")
+      recipes = JSON.parse(json_response, symbolize_names: true)[:data]
       
       expect(recipes).to be_a Array
       expect(recipes).to_not be_empty

@@ -16,7 +16,7 @@ RSpec.describe 'User Registration', type: :request do
   describe 'happy path' do
     it 'creates new user' do 
       user_count = User.count
-      
+
       post '/api/v1/users', headers: @headers, params: @user_info, as: :json
       expect(response).to be_successful
       expect(response.status).to eq(201)
@@ -34,7 +34,17 @@ RSpec.describe 'User Registration', type: :request do
 
       expect(user[:data][:attributes][:name]).to eq('George')
       expect(user[:data][:attributes][:email]).to eq('george@mosquito.org')
+    end
 
+    it 'throws error if email isnt unique' do 
+      create(:user, email: 'george@mosquito.org')
+      user_count = User.count
+
+      post '/api/v1/users', headers: @headers, params: @user_info, as: :json
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(403)
+      expect(user_count).to eq(user_count)
     end
   end
 end

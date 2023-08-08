@@ -31,7 +31,7 @@ RSpec.describe CountriesFacade, :vcr do
       countries = @cf.all_countries
 
       country_names = countries.map do |country|
-        country[:name][:common]
+        country[:name][:common].delete(' ')
       end
 
       expect(country_names).to include(country_name)

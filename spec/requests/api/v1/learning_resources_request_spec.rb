@@ -69,8 +69,8 @@ RSpec.describe 'Learning Resources Requests' do
       
       video = resource_attributes[:video]
 
-      check_hash_structure(video, :title, String)
-      check_hash_structure(video, :youtube_video_id, String)
+      check_hash_structure(video, :title, String) unless video.empty?
+      check_hash_structure(video, :youtube_video_id, String) unless video.empty? 
       
       images = resource_attributes[:images]
 

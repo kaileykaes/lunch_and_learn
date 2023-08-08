@@ -50,6 +50,11 @@ RSpec.describe 'Favorites Requests', type: :request do
       expect(error_attributes[:message]).to eq("Bad credentials. Try again.")
     end
   end
+
+  describe 'favorite index' do 
+    it 'get request with valid api key returns favorites'
+    it 'get request without valid api key returns error'
+  end
 end
 
 

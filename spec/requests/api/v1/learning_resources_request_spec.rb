@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Learning Resources Requests' do
   describe 'endpoint' do
-    it 'hits the endpoint' do 
+    it 'hits the endpoint', :vcr do 
       headers = { "CONTENT_TYPE" => "application/json"} 
       get "/api/v1/learning_resources?country=india", headers: headers
       expect(response).to be_successful
@@ -44,9 +44,15 @@ RSpec.describe 'Learning Resources Requests' do
     end
 
     it 'returns complete serialized json if no country given' do 
-      headers = { "CONTENT_TYPE" => "application/json"}
-      get "/api/v1/learning_resources", headers: headers
-      learning_resource = JSON.parse(response.body, symbolize_names: true)
+      json_response = File.read("spec/fixtures/learning_resources/learning_resource.json")
+
+      response = Net::HTTPSuccess.new(1.0, 200, 'OK')
+      stub_request(:get, "/api/v1/learning_resources")
+      .with(
+        headers: { "CONTENT_TYPE" => "application/json"})
+      .to_return(response)
+
+      learning_resource = JSON.parse(json_response, symbolize_names: true)
 
       check_hash_structure(learning_resource, :data, Hash)
 

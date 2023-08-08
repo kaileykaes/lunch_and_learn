@@ -53,12 +53,14 @@ RSpec.describe 'Favorites Requests', type: :request do
 
   describe 'favorite index' do 
     it 'get request with valid api key returns favorites' do 
+      create_list(:favorite, 5, user: @user)
+
       get "/api/v1/favorites?api_key=#{@user.api_key}", headers: @headers, as: :json
-
+      
       expect(response).to be_successful
-
+      
       favorites = JSON.parse(response.body, symbolize_names: true) 
-
+      
       check_hash_structure(favorites, :data, Array)
       
       favorited = favorites[:data]
@@ -74,9 +76,10 @@ RSpec.describe 'Favorites Requests', type: :request do
         check_hash_structure(favorite[:attributes], :created_at, String)
       end
     end
-
-
+    
     it 'get request without valid api key returns error' do 
+      create_list(:favorite, 5, user: @user)
+
       get '/api/v1/favorites?api_key=gh98h4539h4', headers: @headers, as: :json
 
       expect(response).to_not be_successful
@@ -90,6 +93,18 @@ RSpec.describe 'Favorites Requests', type: :request do
       error_attributes = error[:error]
       expect(error_attributes[:status]).to eq(401)
       expect(error_attributes[:message]).to eq("Bad credentials. Try again.")
+    end
+
+    it 'returns empty array if no favorites' do 
+      get "/api/v1/favorites?api_key=#{@user.api_key}", headers: @headers, as: :json
+      
+      expect(response).to be_successful
+      
+      favorites = JSON.parse(response.body, symbolize_names: true) 
+      
+      check_hash_structure(favorites, :data, Array)
+
+      expect(favorites[:data]).to be_empty
     end
   end
 end

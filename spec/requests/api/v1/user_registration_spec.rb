@@ -83,7 +83,7 @@ RSpec.describe 'User Registration', type: :request do
 
       error_attributes = error[:error]
       expect(error_attributes[:status]).to eq(403)
-      expect(error_attributes[:message]).to eq("Validation failed: Password confirmation doesn't match Password, Password confirmation doesn't match Password")
+      expect(error_attributes[:message]).to eq("Validation failed: Password confirmation doesn't match Password")
     end
   end
 end

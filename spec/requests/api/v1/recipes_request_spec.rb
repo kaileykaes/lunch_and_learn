@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Recipes Requests', :vcr do
+RSpec.describe 'Recipes Requests' do
   describe 'endpoint' do
     it 'hits the endpoint' do 
       headers = { "CONTENT_TYPE" => "application/json"}
@@ -8,7 +8,7 @@ RSpec.describe 'Recipes Requests', :vcr do
       expect(response).to be_successful
     end
     
-    it 'returns serialized json' do 
+    it 'returns serialized json', :vcr do 
       headers = { "CONTENT_TYPE" => "application/json"}
       get "/api/v1/recipes?country=laos", headers: headers
       recipes = JSON.parse(response.body, symbolize_names: true)[:data]
@@ -50,7 +50,7 @@ RSpec.describe 'Recipes Requests', :vcr do
       end
     end
     
-    it 'if nothing returned, response is an empty data array' do
+    it 'if nothing returned, response is an empty data array', :vcr do
       headers = { "CONTENT_TYPE" => "application/json"}
       get "/api/v1/recipes?country=sudan", headers: headers
       

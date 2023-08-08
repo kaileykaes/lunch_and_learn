@@ -27,6 +27,7 @@ RSpec.describe 'Learning Resources Requests', :vcr do
       resource_attributes = learning_resource_data[:attributes]
 
       check_hash_structure(resource_attributes, :country, String)
+      expect(resource_attributes[:country]).to_not eq('null')
       check_hash_structure(resource_attributes, :video, Hash)
       check_hash_structure(resource_attributes, :images, Array)
       

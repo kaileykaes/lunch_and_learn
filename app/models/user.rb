@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates :password, confirmation: true
   validates :name, :email, :password, presence: true
   validates :email, uniqueness: true
+  has_many :favorites
 
   private
   def substantiate_api_key

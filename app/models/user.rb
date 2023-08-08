@@ -8,6 +8,6 @@ class User < ApplicationRecord
 
   private
   def substantiate_api_key
-    self.api_key = SecureRandom.base64(5)
+    self.api_key = SecureRandom.hex(5)
   end
 end

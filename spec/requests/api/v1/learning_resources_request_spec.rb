@@ -43,7 +43,7 @@ RSpec.describe 'Learning Resources Requests' do
       end
     end
 
-    it 'returns complete serialized json if no country given', :vcr do 
+    it 'returns complete serialized json if no country given' do 
       headers = { "CONTENT_TYPE" => "application/json"}
       get "/api/v1/learning_resources", headers: headers
       learning_resource = JSON.parse(response.body, symbolize_names: true)

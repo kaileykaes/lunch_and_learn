@@ -1,5 +1,8 @@
 class Api::V1::LearningResourcesController < ApplicationController
   def index
+    unless params[:country].present? 
+      params[:country] = CountriesFacade.new.random_country_name
+    end
     render json: LearningResourceSerializer.format_resources(video, images, params[:country])
   end
 

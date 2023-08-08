@@ -5,7 +5,6 @@ class CountriesService
     end
     
     private 
-
     def conn 
       Faraday.new("https://restcountries.com/v3.1/")
     end

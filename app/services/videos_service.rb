@@ -9,7 +9,6 @@ class VideosService
     end
 
     private 
-
     def conn 
       Faraday.new("https://youtube.googleapis.com/youtube/v3/")
     end

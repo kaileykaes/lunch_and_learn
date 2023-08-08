@@ -10,7 +10,6 @@ class ImagesService
     end
     
     private 
-
     def conn 
       Faraday.new("https://api.unsplash.com/")
     end

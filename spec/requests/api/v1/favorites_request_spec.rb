@@ -22,7 +22,7 @@ RSpec.describe 'Favorites Requests', type: :request do
       success_message = JSON.parse(response.body, symbolize_names: true)
 
       expect(success_message).to be_a Hash
-      expect(success_message[:success]).to eq('Favorite added successfully')
+      expect(success_message[:success]).to eq('Favorite added successfully.')
       check_hash_structure(success_message, :success, String)
     end
 

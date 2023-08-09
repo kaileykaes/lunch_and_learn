@@ -1,0 +1,55 @@
+{
+  "data": {
+      "id": null,
+      "type": "learning_resource",
+      "attributes": {
+          "country": "Mexico",
+          "video": {
+              "title": "A Super Quick History of Paraguay",
+              "youtube_video_id": "lpVqdMIWtp0"
+          },
+          "images": [
+              {
+                  "alt_tag": "; people standing on corner road near concrete buildings during daytime",
+                  "url": "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixid=M3w0ODU5MTd8MHwxfHNlYXJjaHwxfHxNZXhpY298ZW58MHx8fHwxNjkxNTM0NzQ5fDA&ixlib=rb-4.0.3"
+              },
+              {
+                  "alt_tag": "Church at colonial town of Valladolid; low angle photo of temple",
+                  "url": "https://images.unsplash.com/photo-1512813195386-6cf811ad3542?ixid=M3w0ODU5MTd8MHwxfHNlYXJjaHwyfHxNZXhpY298ZW58MHx8fHwxNjkxNTM0NzQ5fDA&ixlib=rb-4.0.3"
+              },
+              {
+                  "alt_tag": "Chicen Itza in Mexico; grey pyramid",
+                  "url": "https://images.unsplash.com/photo-1568402102990-bc541580b59f?ixid=M3w0ODU5MTd8MHwxfHNlYXJjaHwzfHxNZXhpY298ZW58MHx8fHwxNjkxNTM0NzQ5fDA&ixlib=rb-4.0.3"
+              },
+              {
+                  "alt_tag": "Bandera mexicana; flag of Mexico",
+                  "url": "https://images.unsplash.com/photo-1537222961176-50d25fff78ef?ixid=M3w0ODU5MTd8MHwxfHNlYXJjaHw0fHxNZXhpY298ZW58MHx8fHwxNjkxNTM0NzQ5fDA&ixlib=rb-4.0.3"
+              },
+              {
+                  "alt_tag": "; a red wall with a sign that says mexico innamor",
+                  "url": "https://images.unsplash.com/flagged/photo-1572465213253-31b7e7f634ec?ixid=M3w0ODU5MTd8MHwxfHNlYXJjaHw1fHxNZXhpY298ZW58MHx8fHwxNjkxNTM0NzQ5fDA&ixlib=rb-4.0.3"
+              },
+              {
+                  "alt_tag": "Colorful skulls for sale in Mexico City during Día de los Muertos.; assorted color plastic toy lot",
+                  "url": "https://images.unsplash.com/photo-1542835435-4fa357baa00b?ixid=M3w0ODU5MTd8MHwxfHNlYXJjaHw2fHxNZXhpY298ZW58MHx8fHwxNjkxNTM0NzQ5fDA&ixlib=rb-4.0.3"
+              },
+              {
+                  "alt_tag": "Desert at Dusk; mountain peak during daytime",
+                  "url": "https://images.unsplash.com/photo-1465256410760-10640339c72c?ixid=M3w0ODU5MTd8MHwxfHNlYXJjaHw3fHxNZXhpY298ZW58MHx8fHwxNjkxNTM0NzQ5fDA&ixlib=rb-4.0.3"
+              },
+              {
+                  "alt_tag": "Bellas artes; people gathered around gray concrete building",
+                  "url": "https://images.unsplash.com/photo-1521216774850-01bc1c5fe0da?ixid=M3w0ODU5MTd8MHwxfHNlYXJjaHw4fHxNZXhpY298ZW58MHx8fHwxNjkxNTM0NzQ5fDA&ixlib=rb-4.0.3"
+              },
+              {
+                  "alt_tag": "; landmark photography of Chichen Itza, Mexico",
+                  "url": "https://images.unsplash.com/photo-1518638150340-f706e86654de?ixid=M3w0ODU5MTd8MHwxfHNlYXJjaHw5fHxNZXhpY298ZW58MHx8fHwxNjkxNTM0NzQ5fDA&ixlib=rb-4.0.3"
+              },
+              {
+                  "alt_tag": "; aerial photo of city",
+                  "url": "https://images.unsplash.com/photo-1547995886-6dc09384c6e6?ixid=M3w0ODU5MTd8MHwxfHNlYXJjaHwxMHx8TWV4aWNvfGVufDB8fHx8MTY5MTUzNDc0OXww&ixlib=rb-4.0.3"
+              }
+          ]
+      }
+  }
+}

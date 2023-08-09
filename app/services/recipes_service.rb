@@ -10,7 +10,6 @@ class RecipesService
     end
     
     private 
-
     def conn 
       Faraday.new("https://api.edamam.com/api/")
     end

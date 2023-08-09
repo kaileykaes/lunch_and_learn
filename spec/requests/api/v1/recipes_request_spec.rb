@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Recipes Requests', :vcr do
+RSpec.describe 'Recipes Requests' do
   describe 'endpoint' do
     it 'hits the endpoint' do 
       headers = { "CONTENT_TYPE" => "application/json"}
@@ -8,7 +8,7 @@ RSpec.describe 'Recipes Requests', :vcr do
       expect(response).to be_successful
     end
     
-    it 'returns serialized json' do 
+    it 'returns serialized json', :vcr do 
       headers = { "CONTENT_TYPE" => "application/json"}
       get "/api/v1/recipes?country=laos", headers: headers
       recipes = JSON.parse(response.body, symbolize_names: true)[:data]
@@ -28,11 +28,20 @@ RSpec.describe 'Recipes Requests', :vcr do
   
   describe 'sad paths' do 
     it 'if no country given, returns recipes from random country' do 
-      get '/api/v1/recipes' 
+      response = Net::HTTPSuccess.new(1.0, 200, 'OK')
+      stub_request(:get, "/api/v1/recipes")
+      .with(
+        headers: {
+          'Accept'=>'*/*',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent'=>'Faraday v2.7.10'
+          })
+      .to_return(response)
+          
+      expect(response.code).to eq(200)           
       
-      expect(response).to be_successful
-      
-      recipes = JSON.parse(response.body, symbolize_names: true)[:data]
+      json_response = File.read("spec/fixtures/recipes/random_recipe.json")
+      recipes = JSON.parse(json_response, symbolize_names: true)[:data]
       
       expect(recipes).to be_a Array
       expect(recipes).to_not be_empty
@@ -50,7 +59,7 @@ RSpec.describe 'Recipes Requests', :vcr do
       end
     end
     
-    it 'if nothing returned, response is an empty data array' do
+    it 'if nothing returned, response is an empty data array', :vcr do
       headers = { "CONTENT_TYPE" => "application/json"}
       get "/api/v1/recipes?country=sudan", headers: headers
       

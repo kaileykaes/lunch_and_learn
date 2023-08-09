@@ -8,6 +8,8 @@ RSpec.describe 'Favorites Requests', type: :request do
 
   describe 'favorite creation' do
     it 'successfully posts a favorite and returns success message' do 
+      favorite_count = Favorite.count
+
       favorite_params = {
         "api_key": @user.api_key,
         "country": "thailand",
@@ -22,6 +24,7 @@ RSpec.describe 'Favorites Requests', type: :request do
       
       success_message = JSON.parse(response.body, symbolize_names: true)
 
+      expect(Favorite.count).to eq(favorite_count + 1)
       expect(success_message).to be_a Hash
       expect(success_message[:success]).to eq('Favorite added successfully.')
       check_hash_structure(success_message, :success, String)
@@ -64,6 +67,7 @@ RSpec.describe 'Favorites Requests', type: :request do
       check_hash_structure(favorites, :data, Array)
       
       favorited = favorites[:data]
+      expect(favorited).to_not be_empty
       
       favorited.each do |favorite|
         check_hash_structure(favorite, :id, String)

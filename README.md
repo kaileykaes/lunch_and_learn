@@ -52,7 +52,7 @@ The endpoints for this API are as follows:
 ### Recipes Endpoints: 
 
 ```
-/api/v1/recipes?country={country}
+GET /api/v1/recipes?country={country}
 ```
 This endpoint returns JSON for a collection of recipes from the country searched: 
   ```
@@ -91,15 +91,171 @@ This endpoint returns JSON for a collection of recipes from the country searched
         ...      
       ]
     }
-    ```
+```
 
 ```
-/api/v1/recipes
+GET /api/v1/recipes
 ```
-If no country is passed in, a collection of recipes from a an arbitrary country will be returned in the same format as above. 
+If no country is passed in, a collection of recipes from an arbitrary country will be returned in the same format as above.
+
 
 ### Learning Resources Endpoints: 
+
+```
+GET api/v1/learning_resources?country={country}
+```
+
+This endpoint returns JSON for a learning resource that includes a video and images for the country searched thus:  
+
+```
+{
+    "data": {
+        "id": null,
+        "type": "learning_resource",
+        "attributes": {
+            "country": "jordan",
+            "video": {
+                "title": "A Super Quick History of Jordan",
+                "youtube_video_id": "PHrjmg1sYlM"
+            },
+            "images": [
+                {
+                    "alt_tag": "Petra - Instagram @filippo_cesarini; brown concrete building during daytime",
+                    "url": <image url>
+                },
+                {
+                    "alt_tag": "The ruined city of Jerash is Jordan's largest and most interesting Roman site, and a major tourist draw card. Its imposing ceremonial gates, colonnaded avenues, temples and theaters all speak to the time when this was an important imperial center.; brown concrete building under blue sky during daytime",
+                    "url": <image url>
+                }
+              ...
+            ]
+        }
+    }
+}
 ```
 
 ```
+GET api/v1/learning_resources
+```
+If no country is specified, a learning resource from a country chosen at random will be returned likewise. 
 
+### User Functionality Endpoints: 
+#### User Registration
+```
+POST /api/v1/users
+```
+To register a new user the following info must be passed in the request body as a JSON payload: 
+```
+{
+  "name": <name>,
+  "email": <email>,
+  "password": <password>,
+  "password_confirmation": <password confirmation>
+}
+
+```
+Successful user creation returns the following: 
+```
+{
+    "data": {
+        "id": <id>,
+        "type": "user",
+        "attributes": {
+            "name": <name>,
+            "email": <email>,
+            "api_key": <API key>
+        }
+    }
+}
+```
+
+#### User Session
+```
+POST /api/v1/sessions
+```
+
+To begin a new user session the following info must be passed in the request body as a JSON payload: 
+```
+{
+  "email": <valid email>
+  "password": <valid password>
+}
+```
+
+A successful request returns the following user information: 
+```
+{
+    "data": {
+        "id": <id>,
+        "type": "user",
+        "attributes": {
+            "name": <name>,
+            "email": <email>,
+            "api_key": <API key>
+        }
+    }
+}
+```
+
+#### User Favorites
+
+```
+POST /api/v1/favorites
+```
+To add a favorite recipe to a user's collection of favorite recipes the following info must be passed in the request body as a JSON payload: 
+
+```
+{
+    "api_key": <API key>, 
+    "country": <country>,
+    "recipe_link": <recipe link>,
+    "recipe_title": <recipe title>
+}
+```
+Successful favorite addition returns this success message: 
+```
+{
+    "success": "Favorite added successfully."
+}
+```
+
+```
+GET /api/v1/favorites?api_key={API key}
+```
+For this endpoint, API keys are sent as query parameters. Successfully hitting this endpoint returns a collection of all the favorites of the user to whom the api key belongs thus: 
+```
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "favorite",
+            "attributes": {
+                "recipe_link": <recipe link>,
+                "recipe_title": <recipe title>,
+                "country": <country>,
+                "created_at": <timestamp>
+            }
+        },
+         {
+            "id": "2",
+            "type": "favorite",
+            "attributes": {
+                "recipe_link": <recipe link>,
+                "recipe_title": <recipe title>,
+                "country": <country>,
+                "created_at": <timestamp>
+            }
+        },
+         {
+            "id": "3",
+            "type": "favorite",
+            "attributes": {
+                "recipe_link": <recipe link>,
+                "recipe_title": <recipe title>,
+                "country": <country>,
+                "created_at": <timestamp>
+            }
+        }
+    ]
+}
+```

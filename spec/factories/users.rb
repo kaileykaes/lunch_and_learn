@@ -1,7 +1,9 @@
+password_example = Faker::Internet.password 
 FactoryBot.define do
   factory :user do
-    name { Faker::Name.full_name }
+    name { Faker::Name.name }
     email { Faker::Internet.email }
-    password_digest { Faker::Internet.password }
+    password { password_example }
+    password_confirmation { password_example }
   end
 end

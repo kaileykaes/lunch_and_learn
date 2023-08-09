@@ -27,3 +27,10 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+
+#Ignore simplecov coverage reports
+/coverage
+
+#Ignore api key and api id
+/config/application.yml

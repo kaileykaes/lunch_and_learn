@@ -3,6 +3,7 @@ class Api::V1::FavoritesController < ApplicationController
 
   def create
     if @user != nil 
+      @user.favorites.create!(favorite_params)
       response.status = 201
       render json: success_message
     else
@@ -19,6 +20,10 @@ class Api::V1::FavoritesController < ApplicationController
   end
 
   private
+  def favorite_params
+    params.permit(:country, :recipe_link, :recipe_title)
+  end
+
   def success_message
     {
       success: "Favorite added successfully."
@@ -26,6 +31,6 @@ class Api::V1::FavoritesController < ApplicationController
   end
 
   def find_user
-    @user = User.find_by(api_key: params[:api_key]) 
+    @user = User.find_by(api_key: params[:api_key])
   end
 end

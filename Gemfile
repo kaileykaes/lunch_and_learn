@@ -39,8 +39,6 @@ gem "bootsnap", require: false
 gem 'faraday'
 gem 'figaro'
 
-gem 'restcountry', '~> 0.6.0'
-
 #Rest Country gem 
 gem 'restcountry'
 

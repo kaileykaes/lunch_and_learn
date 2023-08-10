@@ -1,4 +1,4 @@
-class Api::V1::FavoritesController < ApplicationController
+class Api::V1::FavoritesController < Api::V1::BaseController
   before_action :find_user
 
   def create
